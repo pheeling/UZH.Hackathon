@@ -34,7 +34,7 @@
 
       // TODO(developer): Set to client ID and API key from the Developer Console
       const CLIENT_ID = '999403454693-ej3bea07i01qnpf483ju3047f5t2qhp4.apps.googleusercontent.com';
-      const API_KEY = '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';
+      const API_KEY = 'AIzaSyCtsfgaw7L3jPmVxudqw4ble2riEgEPdn0';
 
       // Discovery doc URL for APIs used by the quickstart
       const DISCOVERY_DOC = 'https://sheets.googleapis.com/$discovery/rest?version=v4';
@@ -153,7 +153,7 @@
         // Flatten to string to display
         const output = range.values.reduce(
             (str, row) => `${str}${row[0]}, ${row[4]}\n`,
-            'Name, Major:\n');
+            'device_label,time,power (Watt)\n');
         document.getElementById('content').innerText = output;
       }
     </script>
