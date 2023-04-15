@@ -11,7 +11,7 @@ if (!process.env.PROVIDER_URL) throw new Error("Missing env PROVIDER_URL");
 const providerUrl = process.env.PROVIDER_URL;
 
 const chainId = 421613; // Arb Goerli
-const contractAddress = "0x72f8aADD9dAda3783849852a456bf139946Ce344";
+const contractAddress = "0xDB56Da51945792F871B90065F1Bdaaa478D550ec";
 const contractAbi = [
   "function mint(address to, uint256 value)",
 ];
@@ -38,7 +38,7 @@ const main = async () => {
     dedicatedMsgSender: true,
     web3FunctionHash: cid,
     web3FunctionArgs: {
-      contract: "0x72f8aADD9dAda3783849852a456bf139946Ce344",
+      contract: "0xDB56Da51945792F871B90065F1Bdaaa478D550ec",
     },
   });
   await tx.wait();

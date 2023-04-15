@@ -12,7 +12,7 @@ Web3Function.onRun(async (context: Web3FunctionContext) => {
 
   // Create contract
   const contractAddress =
-    (userArgs.contract as string) ?? "0x72f8aADD9dAda3783849852a456bf139946Ce344";
+    (userArgs.contract as string) ?? "0xDB56Da51945792F871B90065F1Bdaaa478D550ec";
   const contract = new Contract(contractAddress, CONTRACT_ABI, provider);
 
   let latestValue = 0;
