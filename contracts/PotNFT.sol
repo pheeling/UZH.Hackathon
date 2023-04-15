@@ -7,11 +7,19 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract PotNFT is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
+    address public potCoin;
 
-    constructor() ERC721("FixPot", "FPT") {}
+    modifier onlyPotCoin() {
+      require(msg.sender == potCoin, "Only the pot coin can call this function.");
+      _;
+    }
+
+    constructor(address _potCoin) ERC721("FixPot", "FPT") {
+        potCoin = _potCoin;
+    }
 
     function awardItem(address player, string memory tokenURI)
-        public
+        public onlyPotCoin
         returns (uint256)
     {
         uint256 newItemId = _tokenIds.current();
